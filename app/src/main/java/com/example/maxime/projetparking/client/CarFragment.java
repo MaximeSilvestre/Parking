@@ -20,7 +20,7 @@ import java.util.List;
  */
 
 
-public class Menu2 extends Fragment {
+public class CarFragment extends Fragment {
 
     ListView mListView;
 

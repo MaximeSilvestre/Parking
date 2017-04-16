@@ -14,7 +14,7 @@ import android.view.MenuItem;
 
 import com.example.maxime.projetparking.R;
 
-public class MainActivity extends AppCompatActivity
+public class ClientActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
@@ -81,13 +81,10 @@ public class MainActivity extends AppCompatActivity
         //initializing the fragment object which is selected
         switch (itemId) {
             case R.id.nav_menu1:
-                fragment = new Menu1();
+                fragment = new TicketFragment();
                 break;
             case R.id.nav_menu2:
-                fragment = new Menu2();
-                break;
-            case R.id.nav_menu3:
-                fragment = new Menu3();
+                fragment = new CarFragment();
                 break;
         }
         fragment.setArguments(bundle);

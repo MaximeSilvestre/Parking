@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.maxime.projetparking.client.MainActivity;
+import com.example.maxime.projetparking.client.ClientActivity;
 import com.example.maxime.projetparking.entity.User;
 
 import java.util.List;
@@ -50,7 +50,7 @@ public class Connexion extends AppCompatActivity {
                 }else{
                     User currentUser = user.get(0);
                     if(currentUser.verifierMotDePasse(password)){
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), ClientActivity.class);
                         intent.putExtra("user", currentUser.getMail());
                         startActivity(intent);
                         finish();

@@ -16,7 +16,7 @@ import com.example.maxime.projetparking.R;
  */
 
 
-public class Menu1 extends Fragment {
+public class TicketFragment extends Fragment {
 
     @Nullable
     @Override
