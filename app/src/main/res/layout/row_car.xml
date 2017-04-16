@@ -9,14 +9,15 @@
         android:id="@+id/avatar"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        tools:background="#AAA"
+        android:background="#2C3E50"
+        tools:background="#2C3E50"
         />
 
     <TextView
-        android:id="@+id/marque"
+        android:id="@+id/immatriculaion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
+        android:textColor="#2C3E50"
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/avatar"
         android:layout_alignTop="@+id/avatar"
@@ -29,13 +30,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:layout_alignLeft="@+id/marque"
-        android:layout_below="@+id/marque"
+        android:layout_alignLeft="@+id/immatriculaion"
+        android:layout_below="@+id/immatriculaion"
         tools:text="Texte de mon tweet"
         />
 
     <TextView
-        android:id="@+id/immatriculaion"
+        android:id="@+id/marque"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
@@ -45,3 +46,4 @@
         />
 
 </RelativeLayout>
+

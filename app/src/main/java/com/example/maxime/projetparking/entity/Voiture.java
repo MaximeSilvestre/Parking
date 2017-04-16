@@ -1,4 +1,4 @@
-package com.example.maxime.projetparking;
+package com.example.maxime.projetparking.entity;
 
 import com.orm.SugarRecord;
 

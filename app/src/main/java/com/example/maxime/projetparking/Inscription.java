@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.maxime.projetparking.entity.User;
+
 public class Inscription extends AppCompatActivity {
 
     @Override
@@ -29,6 +31,7 @@ public class Inscription extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(), Connexion.class);
                 startActivity(intent);
+                finish();
 
             }
         });

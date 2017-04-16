@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.maxime.projetparking.client.MainActivity;
+import com.example.maxime.projetparking.entity.User;
+
 import java.util.List;
 
 public class Connexion extends AppCompatActivity {
@@ -32,6 +35,10 @@ public class Connexion extends AppCompatActivity {
             public void onClick(View v) {
                 String email = ((EditText) findViewById(R.id.input_email)).getText().toString();
                 String password = ((EditText) findViewById(R.id.input_password)).getText().toString();
+                if(email.equals("admin") && password.equals("admin")){
+
+                    finish();
+                }
                 List<User> user = User.find(User.class,"mail = ?",email);
                 CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
                 if(user.size() == 0){
@@ -46,6 +53,7 @@ public class Connexion extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         intent.putExtra("user", currentUser.getMail());
                         startActivity(intent);
+                        finish();
                     }
                 }
             }

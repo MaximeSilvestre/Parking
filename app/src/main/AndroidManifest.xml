@@ -32,12 +32,16 @@
         </activity>
         <activity android:name=".Inscription" />
         <activity
-            android:name=".MainActivity"
+            android:name=".client.MainActivity"
             android:label="@string/title_activity_accueil"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".addVoiture"
+            android:name=".client.addVoiture"
             android:label="@string/title_activity_add_voiture"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".administrateur.administrateur"
+            android:label="@string/title_activity_administrateur"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
