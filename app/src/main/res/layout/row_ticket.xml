@@ -5,28 +5,38 @@
     android:layout_height="match_parent"
     android:padding="10dp">
 
-    <ImageView
-        android:id="@+id/avatar"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="#2C3E50"
-        tools:background="#2C3E50"
+
+    <TextView
+        android:id="@+id/dateDebut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#2C3E50"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        tools:text="Pseudo"
+        />
+
+    <TextView
+        android:id="@+id/dureePrevu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_alignLeft="@+id/dateDebut"
+        android:layout_below="@+id/dateDebut"
+        tools:text="Texte de mon tweet"
         />
 
     <TextView
         android:id="@+id/immatriculaion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#2C3E50"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@+id/avatar"
-        android:layout_alignTop="@+id/avatar"
-        android:textStyle="bold"
-        tools:text="Pseudo"
+        android:textColor="@android:color/black"
+        android:layout_alignLeft="@+id/dureePrevu"
+        android:layout_below="@+id/dureePrevu"
+        tools:text="Texte de mon tweet"
         />
-
     <TextView
-        android:id="@+id/model"
+        android:id="@+id/id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
@@ -34,18 +44,6 @@
         android:layout_below="@+id/immatriculaion"
         tools:text="Texte de mon tweet"
         />
-
-    <TextView
-        android:id="@+id/marque"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:layout_alignLeft="@+id/model"
-        android:layout_below="@+id/model"
-        tools:text="Texte de mon tweet"
-        />
-
-
 
 </RelativeLayout>
 

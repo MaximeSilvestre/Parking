@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.maxime.projetparking">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature android:name="android.hardware.location.gps" />
+
     <application
         android:name="com.orm.SugarApp"
         android:allowBackup="true"
@@ -15,7 +20,7 @@
             android:value="bdd.db" />
         <meta-data
             android:name="VERSION"
-            android:value="2" />
+            android:value="1" />
         <meta-data
             android:name="QUERY_LOG"
             android:value="true" />
@@ -36,12 +41,15 @@
             android:label="@string/title_activity_accueil"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".client.addVoiture"
+            android:name=".client.AddVoiture"
             android:label="@string/title_activity_add_voiture"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".administrateur.administrateur"
-            android:label="@string/title_activity_administrateur"
+            android:name=".client.AddTicket"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".client.Location"
+            android:label="@string/title_activity_location"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

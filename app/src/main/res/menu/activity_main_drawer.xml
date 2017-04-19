@@ -5,11 +5,11 @@
         <item
             android:id="@+id/nav_menu1"
             android:icon="@mipmap/ic_launcher"
-            android:title="Menu 1" />
+            android:title="Mes tickets" />
         <item
             android:id="@+id/nav_menu2"
             android:icon="@mipmap/ic_launcher"
-            android:title="Menu 2" />
+            android:title="Mes voitures" />
     </group>
 
 

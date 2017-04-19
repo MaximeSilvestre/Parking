@@ -1,5 +1,6 @@
 package com.example.maxime.projetparking.client;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -8,8 +9,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.maxime.projetparking.R;
+import com.example.maxime.projetparking.entity.Ticket;
+import com.example.maxime.projetparking.entity.Voiture;
+
+import java.util.List;
 
 /**
  * Created by Belal on 18/09/16.
@@ -17,6 +25,8 @@ import com.example.maxime.projetparking.R;
 
 
 public class TicketFragment extends Fragment {
+
+    ListView mListView;
 
     @Nullable
     @Override
@@ -33,14 +43,40 @@ public class TicketFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
         getActivity().setTitle("Menu 1");
+
+        List<Ticket> tickets = Ticket.listAll(Ticket.class);
+        mListView = (ListView) view.findViewById(R.id.listView);
+        TicketAdapter adapter = new TicketAdapter(getActivity().getBaseContext(), tickets);
+        mListView.setAdapter(adapter);
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                String immatriculation = ((TextView)view.findViewById(R.id.id)).getText().toString();
+                Intent intent = new Intent(getContext(), Location.class);
+                intent.putExtra("immatriculation", immatriculation);
+                startActivityForResult(intent,1);
+            }
+        });
+
         FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(getActivity(), AddTicket.class);
+                intent.putExtra("user",getArguments().getString("user"));
+                startActivityForResult(intent,1);
             }
         });
 
+
+
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        List<Ticket> tickets = Ticket.listAll(Ticket.class);
+        TicketAdapter adapter = new TicketAdapter(getActivity().getBaseContext(), tickets);
+        mListView.setAdapter(adapter);
     }
 }

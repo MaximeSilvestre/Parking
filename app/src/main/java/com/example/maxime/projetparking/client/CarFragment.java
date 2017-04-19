@@ -1,5 +1,6 @@
 package com.example.maxime.projetparking.client;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,7 +9,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.maxime.projetparking.R;
 import com.example.maxime.projetparking.entity.Voiture;
@@ -44,12 +47,15 @@ public class CarFragment extends Fragment {
         mListView.setAdapter(adapter);
 
 
+
+
+
         FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.addVoiture);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getActivity(), addVoiture.class);
+                Intent intent = new Intent(getActivity(), AddVoiture.class);
                 intent.putExtra("user",getArguments().getString("user"));
                 startActivityForResult(intent,1);
             }

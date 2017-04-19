@@ -11,7 +11,7 @@ import android.widget.EditText;
 import com.example.maxime.projetparking.R;
 import com.example.maxime.projetparking.entity.Voiture;
 
-public class addVoiture extends AppCompatActivity {
+public class AddVoiture extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
