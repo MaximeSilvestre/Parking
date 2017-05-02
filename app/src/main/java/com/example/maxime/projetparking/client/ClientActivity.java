@@ -1,5 +1,6 @@
 package com.example.maxime.projetparking.client;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -65,7 +66,10 @@ public class ClientActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+
+            Intent intent = new Intent(getApplicationContext(),ModifierUtilisateur.class);
+            intent.putExtra("user",getIntent().getStringExtra("user"));
+            startActivityForResult(intent,1);
         }
 
         return super.onOptionsItemSelected(item);

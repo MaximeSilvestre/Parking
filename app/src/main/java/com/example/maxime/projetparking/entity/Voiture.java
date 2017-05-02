@@ -13,7 +13,23 @@ public class Voiture extends SugarRecord {
     private String immatriculation;
     private String mailUser;
 
-    public Voiture(String marque, String modele, String immatriculation,String mailUser) {
+    public void setMarque(String marque) {
+        this.marque = marque;
+    }
+
+    public void setModele(String modele) {
+        this.modele = modele;
+    }
+
+    public void setImmatriculation(String immatriculation) {
+        this.immatriculation = immatriculation;
+    }
+
+    public void setMailUser(String mailUser) {
+        this.mailUser = mailUser;
+    }
+
+    public Voiture(String marque, String modele, String immatriculation, String mailUser) {
         this.marque = marque;
         this.modele = modele;
         this.immatriculation = immatriculation;

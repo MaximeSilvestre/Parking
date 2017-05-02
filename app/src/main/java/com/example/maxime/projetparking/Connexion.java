@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -19,6 +20,7 @@ public class Connexion extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         setContentView(R.layout.activity_connexion);
 
         Button btn1 = (Button) findViewById(R.id.btn_signin);
@@ -51,7 +53,7 @@ public class Connexion extends AppCompatActivity {
                     User currentUser = user.get(0);
                     if(currentUser.verifierMotDePasse(password)){
                         Intent intent = new Intent(getApplicationContext(), ClientActivity.class);
-                        intent.putExtra("user", currentUser.getMail());
+                        intent.putExtra("user", Long.toString(currentUser.getId()));
                         startActivity(intent);
                         finish();
                     }

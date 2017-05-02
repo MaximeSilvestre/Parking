@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clipToPadding="false"
+    android:padding="10dp">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:padding="8dp"
+        android:elevation="4dp"
+        card_view:cardCornerRadius="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:padding="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#2C3E50"
+                android:textAlignment="center"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:text="Se connecter"/>
+
+            <TextView
+                android:id="@+id/debutStationnement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Se connecter"/>
+
+            <TextView
+                android:id="@+id/dureeStationementInitiale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:layout_marginLeft="10dp"
+                android:text="Se connecter"/>
+
+            <TextView
+                android:id="@+id/dureeStationementEffective"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:layout_marginLeft="10dp"
+                android:text="Se connecter"/>
+            <TextView
+                android:id="@+id/immatriculaion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textColor="@android:color/black"
+                android:text="Se connecter"/>
+
+            <TextView
+                android:id="@+id/zone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textColor="@android:color/black"
+                android:text="Se connecter"/>
+
+            <TextView
+                android:id="@+id/adresse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textColor="@android:color/black"
+                android:text="Se connecter"/>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/map"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#2C3E50"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="44dp"
+        android:layout_marginBottom="10dp"
+        android:padding="12dp"
+        android:text="Ouvrir map"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/ajouter"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#2C3E50"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="20dp"
+        android:padding="12dp"
+        android:text="Ajouter 10 mn"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/finir"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#2C3E50"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="20dp"
+        android:padding="12dp"
+        android:text="Finir"/>
+
+</LinearLayout>

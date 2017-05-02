@@ -40,8 +40,10 @@ public class CarFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
-        getActivity().setTitle("Menu 2");
-        List<Voiture> voitures = Voiture.listAll(Voiture.class);
+        getActivity().setTitle("Gestion voiture");
+        Intent intent = getActivity().getIntent();
+        String user = intent.getStringExtra("user");
+        List<Voiture> voitures = Voiture.find(Voiture.class,"mail_user = ?",user);
         mListView = (ListView) view.findViewById(R.id.listView);
         VoitureAdapter adapter = new VoitureAdapter(getActivity().getBaseContext(), voitures);
         mListView.setAdapter(adapter);

@@ -1,16 +1,21 @@
 package com.example.maxime.projetparking.client;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.maxime.projetparking.Inscription;
 import com.example.maxime.projetparking.R;
 import com.example.maxime.projetparking.entity.Ticket;
-import com.example.maxime.projetparking.entity.Voiture;
 
+import java.text.DateFormat;
 import java.util.List;
 
 /**
@@ -41,13 +46,12 @@ public class TicketAdapter extends ArrayAdapter<Ticket> {
 
             convertView.setTag(viewHolder);
         }
-
-        Ticket ticket = getItem(position);
+        DateFormat shortDateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT,DateFormat.SHORT);
+        final Ticket ticket = getItem(position);
         viewHolder.immatriculation.setText("Immatriculation : "+ticket.getImmatriculation());
-        viewHolder.dateDemande.setText("Marque : "+ticket.getDateDemande());
-        viewHolder.dureeStationementInitiale.setText("Model : "+ticket.getDureeStationementInitiale());
+        viewHolder.dateDemande.setText("Date : "+shortDateFormat.format(ticket.getDateDebut()));
+        viewHolder.dureeStationementInitiale.setText("Durée : "+ticket.getDureeStationementInitiale());
         viewHolder.id.setText("Id : "+ticket.getId());
-
 
         return convertView;
     }

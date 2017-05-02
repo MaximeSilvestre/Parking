@@ -18,6 +18,7 @@ import com.example.maxime.projetparking.entity.Ticket;
 import com.example.maxime.projetparking.entity.Voiture;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by Belal on 18/09/16.
@@ -27,6 +28,7 @@ import java.util.List;
 public class TicketFragment extends Fragment {
 
     ListView mListView;
+    String user;
 
     @Nullable
     @Override
@@ -42,29 +44,31 @@ public class TicketFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
-        getActivity().setTitle("Menu 1");
+        getActivity().setTitle("Gestion ticket");
+        Intent intent = getActivity().getIntent();
+        user = intent.getStringExtra("user");
 
-        List<Ticket> tickets = Ticket.listAll(Ticket.class);
+        List<Ticket> tickets = Ticket.find(Ticket.class,"id_user = ?",user );
         mListView = (ListView) view.findViewById(R.id.listView);
         TicketAdapter adapter = new TicketAdapter(getActivity().getBaseContext(), tickets);
         mListView.setAdapter(adapter);
-
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                String immatriculation = ((TextView)view.findViewById(R.id.id)).getText().toString();
-                Intent intent = new Intent(getContext(), Location.class);
-                intent.putExtra("immatriculation", immatriculation);
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getContext(),InfoTicket.class);
+                intent.putExtra("idTicket", ((TextView)view.findViewById(R.id.id)).getText().toString());
                 startActivityForResult(intent,1);
             }
         });
+
+
 
         FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), AddTicket.class);
-                intent.putExtra("user",getArguments().getString("user"));
+                intent.putExtra("user",user);
                 startActivityForResult(intent,1);
             }
         });

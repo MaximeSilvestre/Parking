@@ -16,9 +16,30 @@ public class User extends SugarRecord {
 
     public User(){}
 
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public void setMotDePasse(String motDePasse) {
+        this.motDePasse = motDePasse;
+    }
+
     public User(String nom, String prenom, String telephone, String mail, String motDePasse) {
         this.nom = nom;
         this.prenom = prenom;
+
         this.telephone = telephone;
         this.mail = mail;
         this.motDePasse = motDePasse;

@@ -3,6 +3,7 @@
     package="com.example.maxime.projetparking">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature android:name="android.hardware.location.gps" />
@@ -50,6 +51,21 @@
         <activity
             android:name=".client.Location"
             android:label="@string/title_activity_location"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".client.ModifierVoiture"
+            android:label="@string/title_activity_modifier_voiture"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".client.ModifierUtilisateur"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service android:name=".counter.NotifyService" />
+
+        <activity
+            android:name=".client.InfoTicket"
+            android:label="@string/title_activity_info_ticket"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
